@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
-  s.name         =  'KNSemiModalViewController'
-  s.version      =  '0.4'
+  s.name         =  'KNSemiModalViewController@hons82'
+  s.version      =  '0.4.1'
   s.license      =  { :type => 'MIT',
                       :text => <<-LICENSE
                         UIViewController+KNSemiModal is licensed under MIT License
@@ -23,10 +23,11 @@ Pod::Spec.new do |s|
                         THE SOFTWARE.    
                       LICENSE
                     }
-  s.summary      =  'Replica of the semi-modal view with pushed-back stacked animation found in the beautiful Park Guides by National Geographic app. Custom background view option was added in this fork.'
-  s.homepage     =  'https://github.com/opedge/KNSemiModalViewController'
+  s.summary      =  'Replica of the semi-modal view with pushed-back stacked animation found in the beautiful Park Guides by National Geographic app.'
+  s.summary      =  'Custom background view option was added in this fork and the ability use it in other podspecs as a dependency'
+  s.homepage     =  'https://github.com/hons82/KNSemiModalViewController'
   s.author       =  { 'Kent Nguyen' => 'nguyen.dmz@gmail.com', 'Oleg Poyaganov' => 'opedge@gmail.com' }
-  s.source       =  { :git => 'https://github.com/opedge/KNSemiModalViewController.git', :tag => '0.4' }
+  s.source       =  { :git => 'https://github.com/hons82/KNSemiModalViewController.git', :tag => "#{s.version}" }
   s.platform     =  :ios
   s.source_files =  'Source'
 
