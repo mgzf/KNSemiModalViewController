@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
-  s.name         =  'KNSemiModalViewController@hons82'
-  s.version      =  '0.4.1'
+  s.name         =  'KNSemiModalViewController_hons82'
+  s.version      =  '0.4.2'
   s.license      =  { :type => 'MIT',
                       :text => <<-LICENSE
                         UIViewController+KNSemiModal is licensed under MIT License
