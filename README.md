@@ -1,5 +1,10 @@
 ## UIViewController+KNSemiModal Category
 
+[![Pod Version](http://img.shields.io/cocoapods/v/KNSemiModalViewController_hons82.svg?style=flat)](http://cocoadocs.org/docsets/KNSemiModalViewController_hons82/)
+[![Pod Platform](http://img.shields.io/cocoapods/p/KNSemiModalViewController_hons82.svg?style=flat)](http://cocoadocs.org/docsets/KNSemiModalViewController_hons82/)
+[![Pod License](http://img.shields.io/cocoapods/l/KNSemiModalViewController_hons82.svg?style=flat)](http://opensource.org/licenses/MIT)
+
+
 UIViewController+KNSemiModal is an effort to make a replica of **semi-modal view with pushed-back stacked animation** found in the beautiful [Park Guides by National Geographic](http://itunes.apple.com/us/app/national-parks-by-national/id518426085?mt=8) app. You can see this original semi-modal view below.
 
 This library (ARC) is designed as a Category to UIViewController so you don't have to subclass and you can simply drop in any project and it will just work!
