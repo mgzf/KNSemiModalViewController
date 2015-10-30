@@ -200,7 +200,7 @@ const struct KNSemiModalOption KNSemiModalOptionKeys = {
 	
     if (![target.subviews containsObject:view]) {
         // Set associative object
-        objc_setAssociatedObject(self.view, kSemiModalPresentingViewController, self, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(view, kSemiModalPresentingViewController, self, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
         // Register for orientation changes, so we can update the presenting controller screenshot
         [[NSNotificationCenter defaultCenter] addObserver:self
