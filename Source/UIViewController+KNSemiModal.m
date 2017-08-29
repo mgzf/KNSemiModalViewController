@@ -254,18 +254,6 @@ const struct KNSemiModalOption KNSemiModalOptionKeys = {
         UIImageView *ss = [self kn_addOrUpdateParentScreenshotInView:overlay];
         [target addSubview:overlay];
         
-        // Dismiss button (if allow)
-        if(![[[self kn_targetToStoreValues] ym_optionOrDefaultForKey:KNSemiModalOptionKeys.disableCancel] boolValue]) {
-            // Don't use UITapGestureRecognizer to avoid complex handling
-            UIButton * dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            [dismissButton addTarget:self action:@selector(dismissSemiModalView) forControlEvents:UIControlEventTouchUpInside];
-            dismissButton.backgroundColor = [UIColor clearColor];
-            dismissButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-            dismissButton.frame = overlayFrame;
-            dismissButton.tag = kSemiModalDismissButtonTag;
-            [overlay addSubview:dismissButton];
-        }
-        
         // Begin overlay animation
 		if ([[[self kn_targetToStoreValues] ym_optionOrDefaultForKey:KNSemiModalOptionKeys.pushParentBack] boolValue]) {
 			[ss.layer addAnimation:[self animationGroupForward:YES] forKey:@"pushedBackAnimation"];
@@ -307,6 +295,17 @@ const struct KNSemiModalOption KNSemiModalOptionKeys = {
             }
         } completion:^(BOOL finished) {
             if (!finished) return;
+            // Dismiss button (if allow)
+            if(![[[self kn_targetToStoreValues] ym_optionOrDefaultForKey:KNSemiModalOptionKeys.disableCancel] boolValue]) {
+                // Don't use UITapGestureRecognizer to avoid complex handling
+                UIButton * dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
+                [dismissButton addTarget:self action:@selector(dismissSemiModalView) forControlEvents:UIControlEventTouchUpInside];
+                dismissButton.backgroundColor = [UIColor clearColor];
+                dismissButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+                dismissButton.frame = overlayFrame;
+                dismissButton.tag = kSemiModalDismissButtonTag;
+                [overlay addSubview:dismissButton];
+            }
             [[NSNotificationCenter defaultCenter] postNotificationName:kSemiModalDidShowNotification
                                                                 object:self];
             if (completion) {
